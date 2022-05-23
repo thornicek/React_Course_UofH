@@ -1,0 +1,22 @@
+note over browser: User enters a note and hits the save button
+
+browser -> server: HTTP POST https://fullstack-exampleapp.herouapp.com/new_note
+server -> browser: HTTP status code 302
+browser -> server: HTTP GET /notes
+server -> browser: HTML redirect
+
+notes over browser: browser reloads the Notes page
+
+browser -> server:  HTTP GET https://fullstack-exampleapp.herouapp.com/main.css
+server -> browser: main.css
+browser -> server:  HTTP GET https://fullstack-exampleapp.herouapp.com/main.js
+server -> browser: main.js
+browser -> server:  HTTP GET https://fullstack-exampleapp.herouapp.com/data.json
+server -> browser: data.json
+
+notes over browser: The form does a HTTP POST request to the adress new_note. This is done by the form attributes action and method.
+The server then is responsible for the code for the POST request.
+
+browser -> server: data(new note) is sent as POST request
+
+notes on server: server creates new note object and pushes it to the array called notes

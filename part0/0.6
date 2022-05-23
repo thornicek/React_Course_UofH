@@ -1,0 +1,9 @@
+note over browser: User enters a note and hits the save button
+
+browser -> server: HTTP POST request https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+notes over browser: POST request contains the new note as JSON data. The content type header of request tells the server
+that data is represented in a JSON format.
+
+server -> browser: HTTP status code 201 created
+
